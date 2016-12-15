@@ -21,7 +21,9 @@ session_start();
 	 echo ' <ul class="menu_poziome">';
 	 echo'<li><a href="logout.php" class="linkmenu">Wyloguj się!</a></li>';
 echo ' </ul><section id="content">';
-
+print'<table>
+<tr><td>Folder<td/><td>cos<td/><tr/>
+</table>';
 
 }
 else {

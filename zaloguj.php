@@ -24,6 +24,7 @@ else
 	$ilu_userow = $rezultat->num_rows;
 		if($ilu_userow>0)
 		{	
+			$wiersz = $rezultat->fetch_assoc();
 			$fail=$wiersz['fail'];
 			if ($fail>=3)
 			{
@@ -44,7 +45,6 @@ else
 			}
 			$polaczenie2->close();
 			$_SESSION['zalogowany'] = true;
-			$wiersz = $rezultat->fetch_assoc();
 			$_SESSION['id'] = $wiersz['id'];
 			$_SESSION['user'] = $wiersz['user'];
 			$user=$_SESSION['id'];
@@ -55,12 +55,6 @@ else
 		}
 		else
 		{	
-			if ($fail>=3)
-			{
-			$_SESSION['blad']='<span style="color:red">KONTO ZABLOKOWANE!</span>';
-			}
-			else{
-			$_SESSION['blad']='<span style="color:red">Nieprawidłowy login lub hasło!</span>';}
 			$polaczenie2=@new mysqli("mysql636int.cp.az.pl", "u1230784_sa64413", "8RenOcnIBVnbW7Wa","db1230784_sa64413_main");
 			if ($polaczenie2->connect_errno!=0)
 			{
@@ -74,6 +68,12 @@ else
 			$row = mysqli_fetch_assoc($query);
 			$fail = $row['fail'];
 			$fail=$fail+1;
+				if ($fail>=3)
+			{
+			$_SESSION['blad']='<span style="color:red">KONTO ZABLOKOWANE!</span>';
+			}
+			else{
+			$_SESSION['blad']='<span style="color:red">Nieprawidłowy login lub hasło!</span>';}
 			$zapytanie2 = "UPDATE users SET fail=$fail WHERE user='$login' ;";
 			mysqli_query ($polaczenie2,$zapytanie2) ;
 			}
@@ -94,6 +94,6 @@ else
 		}
 
      $polaczenie->close();
-	header('Location: index.php');
+	 header('Location: index.php');
 
 ?>
