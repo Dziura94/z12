@@ -1,0 +1,80 @@
+/*  tu zdefiniowany jest glównie wyglad menu poziomego */
+	ul, ul li {	display: block;	list-style: none; margin: 0; padding: 0; }
+	ul { border-bottom: 1px solid #888;	float: left; width: 100%; padding-left: 10px; }
+	ul li { float: left; margin-right: 10px; }
+	ul a:link, ul a:visited { text-decoration: none; display: block; background-color: #000000; color: #ffcc00;padding: 3px 3px; border: 1px solid #888; position: relative; top: 2px; }
+	ul a:hover { background-color: #336600; border-bottom-color: #336600; }
+
+/* kolor fontu i tla portalu */	
+body {  
+	background: url(zdjecia/tlo.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+	color: #ffcc00; margin: 3px; min-height: 100%; position:relative; opacity:0.75;}
+
+/* kolor fontów naglówkowych */	
+	h2 {color: #ffcc00; }
+	h4 {color: #ffcc00 }
+
+/* kolor przyklad definiowania wlasnego formatowania */	
+	wlasnytyp1 { color: red; background-color: yellow;  font-weight: bold; }
+
+/* przyklad definiowania formatowania tabeli */	
+	table, td, th { border: 2px solid black; text-align: center; padding: 3px; } 
+	th { background-color: blue; color: white;}
+	caption { text-align:left; color:blue; font-style:italic; padding-left: 5px; font-weight: bold; }
+
+/* definicja formatowania headera */	
+	#header {background-color:#000000; padding-left: 10px; text-align:left; }
+
+/* definicja formatowania contenta - zawartosci strony */	
+	#content { background-color:#000000; margin: 0px; border: 2px solid #000000; min-height:400px;}
+	#content p { padding:10px; }
+
+/* definicja formatowania footer - stopki */	
+	#footer { height:22px; margin: 0px;bottom:0;width:100%;position:fixed}
+	#footer p { color:#ffcc00; text-align:center; margin: 0px;}
+	#footer a { color:red; font-style:italic;}
+	
+#menu
+{
+	float:left;
+	width:148px;
+	text-align:center;
+	font-size: 18px;
+
+}
+#tekst
+{
+	float:left;
+	padding:40px;
+	width:auto;
+	background-color:#000000;
+	min-height: auto;
+	text-align: justify;
+}
+.option
+{
+	font-size:18px;
+	height:25px;
+	padding:10px;
+	background-color:#2a2a2a;
+}
+.option:hover
+{
+	background-color:#336600;
+	cursor:pointer;
+}
+a.linkmenu
+{
+	color:#ffcc00;
+	text-decoration:none;
+}
+div.scroll {
+    overflow: scroll;
+	height:500px;
+}
+
