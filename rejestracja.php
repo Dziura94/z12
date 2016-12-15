@@ -43,7 +43,7 @@ else
 		$haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
 		$login= mysqli_real_escape_string($polaczenie,$login);
 		$haslo = mysqli_real_escape_string($polaczenie,$haslo);
-		$zapytanie = mysqli_query ($polaczenie,"INSERT INTO uzytkownicy2 VALUES (NULL, '".$login."' ,'".$haslo."',0);");
+		$zapytanie = mysqli_query ($polaczenie,"INSERT INTO users VALUES (NULL, '".$login."' ,'".$haslo."',0);");
 		$polaczenie->close();
 	 	print"<script> window.location.replace('index.php');</script>";
 }
