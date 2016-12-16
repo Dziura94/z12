@@ -21,9 +21,24 @@ session_start();
 	 echo ' <ul class="menu_poziome">';
 	 echo'<li><a href="logout.php" class="linkmenu">Wyloguj się!</a></li>';
 echo ' </ul><section id="content">';
-print'<table>
-<tr><td>Folder<td/><td>cos<td/><tr/>
-</table>';
+$login=$_SESSION['user'];
+ $dir = "pliki/$login";
+ if ( !file_exists($dir) ) {
+     $oldmask = umask(0);  
+     mkdir ($dir, 0744);
+ }
+echo"<H2>Twoje pliki</H2>";
+$files = scandir("pliki/$login",1);
+$dlugosc=count ($files);
+echo"Zawartość Folderu $login";
+print'<table CELLPADDING=5 BORDER=1>
+<tr><td>Nazwa</td><td>Akcja</td></tr>';
+for ($i=0;$i<($dlugosc-2);$i++)
+{
+echo "<tr><td>$files[$i]</td><td>Akcja</td></tr>";
+}
+echo'</table>';
+
 
 }
 else {
